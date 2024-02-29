@@ -16,8 +16,10 @@ class CompanyController extends DefaultController
             throw new HttpNotFoundException($request);
         }
 
-        return $this->twig->render($response, 'company/index.twig', [
+        return $this->twig->render(
+            $response, 'company/index.twig', [
             'company' => $company,
-        ]);
+            ]
+        );
     }
 }

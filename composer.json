@@ -13,7 +13,8 @@
         "fakerphp/faker": "^1.23"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23"
+        "squizlabs/php_codesniffer": "*",
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {

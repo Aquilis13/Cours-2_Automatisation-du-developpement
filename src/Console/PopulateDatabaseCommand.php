@@ -34,7 +34,9 @@ class PopulateDatabaseCommand extends Command
     {
         $output->writeln('Populate database...');
 
-        /** @var \Illuminate\Database\Capsule\Manager $db */
+        /**
+ * @var \Illuminate\Database\Capsule\Manager $db 
+*/
         $db = $this->app->getContainer()->get('db');
 
         $db->getConnection()->statement("SET FOREIGN_KEY_CHECKS=0");
@@ -61,7 +63,8 @@ class PopulateDatabaseCommand extends Command
             $image = $faker->imageUrl(400, 300, 'business');
 
             // Mise en place de la requête à la base de données
-            $db->getConnection()->statement("INSERT INTO `companies` VALUES 
+            $db->getConnection()->statement(
+                "INSERT INTO `companies` VALUES 
                 ($i, '$name', '$phone', '$email', '$website', '$image', now(), now(), null)"
             );
         }
@@ -81,9 +84,11 @@ class PopulateDatabaseCommand extends Command
             $companyId = $faker->numberBetween(1, $nbCompagnies);
 
             // Mise en place de la requête à la base de données
-            $db->getConnection()->statement("INSERT INTO `offices` VALUES 
+            $db->getConnection()->statement(
+                "INSERT INTO `offices` VALUES 
                 ($i,'$name','$address','$city','$zipCode','$country','$email', '$phone', $companyId, now(), now())
-            ");
+            "
+            );
         }
 
         // /**
@@ -99,9 +104,11 @@ class PopulateDatabaseCommand extends Command
             $jobTitle = $faker->jobTitle;
 
             // Mise en place de la requête à la base de données
-            $db->getConnection()->statement("INSERT INTO `employees` VALUES
+            $db->getConnection()->statement(
+                "INSERT INTO `employees` VALUES
                 ($i,'$firstName','$lastName', $officeId, '$email', '$phone','$jobTitle', now(), now())
-            ");
+            "
+            );
         }        
 
         $db->getConnection()->statement("update companies set head_office_id = 1 where id = 1;");

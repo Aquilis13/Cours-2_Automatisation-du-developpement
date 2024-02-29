@@ -14,7 +14,7 @@ class OfficeController extends DefaultController
 {
     public function editGet(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
-       $office = $this->findOfficeById($request);
+        $office = $this->findOfficeById($request);
 
         return $this->twig->render($response, 'office/form.twig', ['office' => $office]);
     }

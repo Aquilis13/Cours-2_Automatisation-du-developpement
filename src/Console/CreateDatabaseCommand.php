@@ -33,7 +33,8 @@ class CreateDatabaseCommand extends Command
         $db->getConnection()->statement("DROP TABLE IF EXISTS `offices`");
         $db->getConnection()->statement("DROP TABLE IF EXISTS `companies`");
         $db->getConnection()->statement("SET FOREIGN_KEY_CHECKS=1");
-        $db->getConnection()->statement("
+        $db->getConnection()->statement(
+            "
         CREATE TABLE companies
 (
     id      INT AUTO_INCREMENT    NOT NULL,
@@ -47,9 +48,11 @@ class CreateDatabaseCommand extends Command
     head_office_id INT                    ,
     PRIMARY KEY (id)
 );
-        ");
+        "
+        );
 
-        $db->getConnection()->statement("
+        $db->getConnection()->statement(
+            "
         CREATE TABLE offices
 (
     id         INT AUTO_INCREMENT NOT NULL,
@@ -66,9 +69,11 @@ class CreateDatabaseCommand extends Command
     PRIMARY KEY (id),
     FOREIGN KEY (company_id) REFERENCES companies (id)
 );
-        ");
+        "
+        );
 
-        $db->getConnection()->statement("
+        $db->getConnection()->statement(
+            "
         CREATE TABLE employees
 (
     id         INT AUTO_INCREMENT NOT NULL,
@@ -83,7 +88,8 @@ class CreateDatabaseCommand extends Command
     PRIMARY KEY (id),
     FOREIGN KEY (office_id) REFERENCES offices (id)
 );
-        ");
+        "
+        );
 
         $db->getConnection()->statement("ALTER TABLE companies ADD CONSTRAINT companies_id_fk_1 FOREIGN KEY (head_office_id) REFERENCES offices (id);");
 

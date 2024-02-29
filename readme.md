@@ -1,3 +1,13 @@
+## Ajout de phpcs et phpstan
+``` bash
+# commandes phpcs
+docker compose exec php vendor/bin/phpcs src
+docker compose exec php vendor/bin/phpcbf src
+
+# commande phpstan
+docker compose exec php vendor/bin/phpstan analyse src
+```
+
 # Annuaire d'entreprise
 
 Ce projet est un petit annuaire d'entreprises.  
