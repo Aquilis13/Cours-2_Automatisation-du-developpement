@@ -1,11 +1,11 @@
 ## Ajout de phpcs et phpstan
 ``` bash
 # commandes phpcs
-docker compose exec php vendor/bin/phpcs src
-docker compose exec php vendor/bin/phpcbf src
+docker compose exec php composer run-script phpcs src
+docker compose exec php composer run-script phpcbf src
 
 # commande phpstan
-docker compose exec php vendor/bin/phpstan analyse src
+docker compose exec php composer run-script phpstan src
 ```
 
 # Annuaire d'entreprise
