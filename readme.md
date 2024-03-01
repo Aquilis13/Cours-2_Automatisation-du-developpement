@@ -1,3 +1,12 @@
+## Ajout de eslint
+``` bash
+# Installantion des dépendances
+docker compose run --rm node npm install
+
+# Pour lancer eslint
+docker compose run --rm node npm run lint
+```
+
 ## Ajout de phpcs et phpstan
 ``` bash
 # commandes phpcs
