@@ -1,3 +1,10 @@
+## Vite 
+``` bash
+# Lancement du container
+docker compose up -d
+```
+**Url :** http://0.0.0.0:3000/build/
+
 ## Ajout de eslint
 ``` bash
 # Installantion des dépendances
